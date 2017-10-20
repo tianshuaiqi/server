@@ -1,0 +1,25 @@
+
+<!-- BP常用函数命名规则    2017-10-19 S-->
+<!--公用类-->
+1. ajaxs              处理http请求
+2. setAjaxOptions     http请求前处理url，method，params参数的函数，回调给父函数参数
+3. handle${key}Change 处理下拉框变化的函数， 如handleTableChange，handleGroupChange
+4. ${key}BtnClick     执行某项操作，点击button按钮的一些数据处理，如createUserBtnClick
+5. ${key}IconClick    执行某项操作，点击icon按钮的一些数据处理
+6. 
+<!--函数类-->
+1.http类函数原则：为了保证函数的解耦，原则上不处理逻辑，url作为形参，结果值以promise的resolve形式返还给调用函数
+2.操作类变量命名原则：一类操作前缀相同，后缀不同进行区分，如createUser， createUserBtnClick
+
+<!--变量类-->
+1. pageInit           页面初始化，如变量的初始化和定义 
+2. fetchPageInitData  获取页面初始化的一些数据，如加载列表   1,2 可相互替换
+3. currentUserInfo    当前登录用户的信息 
+4. fetch${key}List    获取列表类函数，如fetchTableList
+5. ${key}Loading      执行某些操作时loading变量，如tableListLoading，deleteUserLoading
+6. ${key}List         列表类数据集合，如databaseList，tableList   key指关键词
+7. ${key}List_copy    列表类数据集合副本
+8. ${key}List_origin  列表类数据集合数据源， 此三者关系为： 4是可变动数据集合，5是供深拷贝集合，6是数据源集合，原则上不可改变
+7. paramsInfo         供深拷贝的数据初始化集合，如 paramsInfo中键createUser的值为创建用户的一些变量配置的初始值
+8. postParams         发送http请求的最终数据集合
+9. ${key}Params       某些用户操作的变量存储集合，如createUserParams 创建用户的数据集合
